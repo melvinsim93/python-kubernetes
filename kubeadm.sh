@@ -4,10 +4,6 @@
 sudo apt update
 sudo apt install -y openjdk-17-jdk  vim git tree maven unzip zip
 # Redirect output to a log file
-exec > /var/log/user-data.log 2>&1
-
-# Fetch EC2 instance's internal FQDN
-HOSTNAME_FQDN=$(curl -s http://169.254.169.254/latest/meta-data/local-hostname)
 
 # Disable swap
 sudo swapoff -a
