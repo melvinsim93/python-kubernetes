@@ -3,18 +3,6 @@
 # Update and install necessary packages
 sudo apt update
 sudo apt install -y openjdk-17-jdk  vim git tree maven unzip zip
-
-# Enable password authentication for SSH
-sudo sed -i '58iPasswordAuthentication yes' /etc/ssh/sshd_config
-sudo sed -i '59iChallengeResponseAuthentication yes' /etc/ssh/sshd_config
-
-# Restart SSH service to apply changes
-sudo systemctl restart sshd
-
-# Create a new user (ubuntu) without a password and set password manually
-sudo adduser ubuntu --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password 
-echo "ubuntu:CloudEnabled" | sudo chpasswd
-
 # Redirect output to a log file
 exec > /var/log/user-data.log 2>&1
 
